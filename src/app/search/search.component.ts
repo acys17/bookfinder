@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit {
   searchText: string = "";
   books: any;
   genres = [];
+  isFav: any;
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +40,11 @@ export class SearchComponent implements OnInit {
         const searchResults : [] = (response.items).map(response => (response.volumeInfo));  
         this.books = searchResults;
       })
+  }
+
+  toggleFav(event) {
+    console.log(event.target);
+    event.target.innerText = "Unfavourite"
   }
 
   handleGenreChange(event) {

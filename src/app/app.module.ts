@@ -8,13 +8,15 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterComponent } from './search/filter/filter.component';
+import { NavbarComponent } from './search/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    FilterComponent
+    FilterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

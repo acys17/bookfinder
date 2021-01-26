@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px rgb(99, 98, 98) solid;
+    height: 80px;
+    background-color: rgb(28, 28, 28);
+
+    h1 {
+        padding: 0 2vw;
+    }
+
+    .nav-links {
+        a {
+            padding-right: 2vw;
+            color: grey;
+            cursor: pointer;
+            transition: ease 0.6s;
+            
+            &:hover {
+                color: white;
+            }
+
+            &:active {
+                color: white;
+            }
+        }
+    }
+}
