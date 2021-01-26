@@ -1,0 +1,16 @@
+<section class="searchpage">
+    <img class="glasses" src="../../assets/images/book.jpg" alt="">
+    <p>Have a browse by searching for your favourite author!</p>
+    <section class="search">
+        <input [(ngModel)]="searchText" type="text" placeholder="e.g. Rowling...">
+        <button (click)="handlesearch()" class="search-button">Search</button>
+    </section>
+    <app-filter [genres]="genres" (genreChange)="handleGenreChange($event)"></app-filter>
+    <section class="book-display">
+        <section *ngFor="let book of books" class="books">
+            <img src={{book.imageLinks.thumbnail}} alt="">    
+            <p class="title">{{book.title}}</p>
+            <p class="author">Author(s): {{book.authors}}</p>
+        </section>
+    </section>
+</section>

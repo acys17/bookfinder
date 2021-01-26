@@ -1,0 +1,116 @@
+$primary-color: rgba(33, 45, 57, 0.995);
+$secondary-color: rgb(250, 248, 248);
+$tertiary-color: rgba(255, 255, 255, 0.486);
+$border-radius: 5px;
+
+*{
+    margin: 10px;
+    color: white;
+}
+
+.searchpage {
+    background-color: $primary-color;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .glasses {
+        width: 400px;
+        height: 300px;
+        border-radius: $border-radius * 10;
+        border: 5px solid $secondary-color;
+        box-shadow: 5px 5px 20px $tertiary-color;
+    }
+
+    .search {
+        display: flex;
+        align-items: center;
+
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid $tertiary-color;
+            
+            &::placeholder {
+                color: $secondary-color;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+        
+        .search-button {
+            padding: 5px;
+            width: 100px;
+            color: $primary-color;
+            border: 2px solid transparent;
+            background-color: $secondary-color;
+            border-radius: $border-radius;
+            transition: ease 0.6s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $primary-color;
+                border: 2px solid $secondary-color;
+                color: $secondary-color;
+            }
+        }
+    }
+
+    app-filter {
+        display: none;
+    }
+
+    .book-display {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        overflow: scroll;
+
+        .books {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.8rem;
+
+            img {
+                height: 200px;
+                object-fit: cover;
+                border: 10px solid $secondary-color;
+                box-shadow: 2px 2px 10px $tertiary-color;
+                border-radius: $border-radius;
+            }
+
+            .title {
+                font-weight: 900;
+            }
+
+            .author {
+                color: $tertiary-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .searchpage {
+        flex-direction: column;
+
+        .glasses {
+            width: 95vw;
+        }
+
+        .book-display {
+            flex-direction: column;
+
+            img {
+                height: 60vh;
+                width: 50vw;
+            }
+        }
+    }
+}
